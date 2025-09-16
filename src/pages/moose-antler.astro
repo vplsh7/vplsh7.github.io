@@ -319,50 +319,6 @@ const antlerChanges = changelogAll
             <p class="text-sm mt-2">Built with ❤️ for the love of great ideas.</p>
         </div>
     </footer>
-
-	<script>
-    // Simple script for mobile menu toggle
-    document.addEventListener('DOMContentLoaded', () => {
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-
-        const toggleMenu = () => {
-            mobileMenu.classList.toggle('hidden');
-        };
-
-        mobileMenuButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            toggleMenu();
-        });
-
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', (event) => {
-                const href = link.getAttribute('href');
-                if (href.startsWith('#')) {
-                    event.preventDefault(); 
-                    const targetElement = document.querySelector(href);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                    if (!mobileMenu.classList.contains('hidden')) {
-                       toggleMenu(); 
-                    }
-                }
-            });
-        });
-
-        document.addEventListener('click', (event) => {
-            const isClickInsideMenu = mobileMenu.contains(event.target);
-            const isClickOnButton = mobileMenuButton.contains(event.target);
-            const isMenuOpen = !mobileMenu.classList.contains('hidden');
-
-            if (isMenuOpen && !isClickInsideMenu && !isClickOnButton) {
-                toggleMenu();
-            }
-        });
-    });
-	</script>
 </body>
 </html>
   <!-- Paste your moose-antler.html content here -->
@@ -381,4 +337,5 @@ const antlerChanges = changelogAll
     </div>
   </section>
 </BaseLayout>
+
 
