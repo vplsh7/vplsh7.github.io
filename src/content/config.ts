@@ -8,7 +8,17 @@ const changelogSchema = z.object({
 
 // Export collections
 export const collections = {
-  antler: defineCollection({ schema: changelogSchema }),
-  reader: defineCollection({ schema: changelogSchema }),
+  antler: defineCollection({
+    schema: changelogSchema,
+    type: "content",
+    dir: "changelog/antler"
+  }),
+  reader: defineCollection({
+    schema: changelogSchema,
+    type: "content",
+    dir: "changelog/reader"
+  }),
 };
+
+
 
