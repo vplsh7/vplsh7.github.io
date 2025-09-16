@@ -1,5 +1,4 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 const changelogs = await getCollection("antler");
@@ -290,6 +289,7 @@ changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 </html>
   <!-- Paste your moose-antler.html content here -->
 </BaseLayout>
+
 
 
 
