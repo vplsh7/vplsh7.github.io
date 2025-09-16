@@ -2,10 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-const changelogAll = await getCollection("changelog");
-const readerChanges = changelogAll
-  .filter(c => c.data.app === "reader")
-  .sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+
+const changelogs = await getCollection("reader");
+
+changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 ---
 
 <BaseLayout title="Moose Reader | Your content, beautifully organized">
@@ -219,56 +219,23 @@ const readerChanges = changelogAll
     </section>
 
     <!-- Changelog Section -->
-    <section id="changelog" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold">What's New</h2>
-                <p class="mt-4 text-lg text-gray-600">We're always working to make Moose Reader better.</p>
-            </div>
-            <div class="max-w-3xl mx-auto">
-                <div class="border-l-2 border-gray-200 pl-8 space-y-12">
-					<!-- Version 1.7.1 -->
-                    <div class="relative">
-                        <div class="absolute -left-10 h-5 w-5 bg-moose-blue rounded-full"></div>
-                        <h3 class="text-2xl font-semibold">Version 1.7.1 <span class="text-sm font-medium text-gray-500 ml-2"> 30 August 2025</span></h3>
-                        <div class="mt-2 text-gray-700 space-y-2">
-                            <p><strong class="font-semibold text-yellow-600">[Bugfix]</strong> <b>Fixed Database Access in Installers:</b> Resolved a major issue where the installed versions of the app (Windows Installer) could not write to the database.</p>
-                            <p><strong class="font-semibold text-yellow-600">[Bugfix]</strong> <b>Fixed Network Certificate Errors:</b> Resolved an "error certificate verify failed" issue in packaged builds by bundling a trusted root certificate authority file (cacert.pem).</p>
-                        </div>
-                    </div>
-                    <!-- Version 1.7.0 -->
-                    <div class="relative">
-                        <div class="absolute -left-10 h-5 w-5 bg-gray-300 rounded-full"></div>
-                        <h3 class="text-2xl font-semibold">Version 1.7.0 <span class="text-sm font-medium text-gray-500 ml-2"> 23 August 2025</span></h3>
-                        <div class="mt-2 text-gray-700 space-y-2">
-                            <p><strong class="font-semibold text-green-600">[New]</strong> Added the <b>"Moose Speak"</b> personality feature.</p>
-                            <p><strong class="font-semibold text-green-600">[New]</strong> Added helpful error messages for feeds that fail to sync.</p>
-                            <p><strong class="font-semibold text-blue-600">[Improved]</strong> UI tweaks for better readability and spacing.</p>
-                        </div>
-                    </div>
-                    <!-- Version 1.5.0 -->
-                    <div class="relative">
-                        <div class="absolute -left-10 h-5 w-5 bg-gray-300 rounded-full"></div>
-                        <h3 class="text-2xl font-semibold">Version 1.5.0 <span class="text-sm font-medium text-gray-500 ml-2">23 August 2025</span></h3>
-                         <div class="mt-2 text-gray-700 space-y-2">
-                            <p><strong class="font-semibold text-green-600">[New]</strong> <b>Introduced Pro features:</b> Fetch Full Article and Save Offline.</p>
-                            <p><strong class="font-semibold text-green-600">[New]</strong> Added automatic Favicon fetching.</p>
-                            <p><strong class="font-semibold text-green-600">[New]</strong> Window size and position now persist between sessions.</p>
-                            <p><strong class="font-semibold text-red-600">[Fixed]</strong> Corrected an issue with unread count calculations.</p>
-                        </div>
-                    </div>
-                    <!-- Version 1.0.0 -->
-                     <div class="relative">
-                        <div class="absolute -left-10 h-5 w-5 bg-gray-300 rounded-full"></div>
-                        <h3 class="text-2xl font-semibold">Version 1.0.0 <span class="text-sm font-medium text-gray-500 ml-2">16 August 2025</span></h3>
-                         <div class="mt-2 text-gray-700 space-y-2">
-                            <p>🎉 Initial public release of Moose Reader!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	 <section id="changelog" class="py-20 bg-white">
+	  <div class="container mx-auto px-6">
+	    <h2 class="text-3xl font-bold text-center mb-12">What's New</h2>
+		<p class="mt-4 text-lg text-gray-600">We're always working to make Moose Reader better.</p>
+	    <div class="max-w-3xl mx-auto space-y-8">
+	      {changelogs.map((entry) => (
+	        <article class="border-l-2 pl-6">
+	          <h3 class="text-2xl font-semibold">
+	            {entry.data.title}
+	            <span class="ml-2 text-sm text-gray-500">{entry.data.date}</span>
+	          </h3>
+	          <div class="prose mt-2" set:html={entry.body}></div>
+	        </article>
+	      ))}
+	    </div>
+	  </div>
+	</section>
     
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-50">
@@ -368,4 +335,5 @@ const readerChanges = changelogAll
     </div>
   </section>
 </BaseLayout>
+
 
