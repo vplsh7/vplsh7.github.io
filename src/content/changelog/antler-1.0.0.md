@@ -1,8 +1,13 @@
 ---
-version: "1.4.0"
-date: "2025-08-31"
+version: "1.0.0"
+date: "2025-08-26"
 app: "antler"
 type: "new"
+title: "Moose Antler 1.0.0"
+date: "2025-08-26"
 ---
 
-**Export to Markdown & Freemind XML:** Now export your mindmaps to Markdown lists and `.mm` format.
+## Version 1.0.0 — *26 August 2025*
+
+- 🎉 Initial public release of Moose Antler!  
+
