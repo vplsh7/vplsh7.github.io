@@ -10,6 +10,349 @@ const readerChanges = changelogAll
 
 <BaseLayout title="Moose Reader | Your content, beautifully organized">
   <!-- Paste your moose-reader.html content here -->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moose Reader | Your content, beautifully organized.</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* A very light grey, similar to the app's light mode */
+        }
+        .bg-app-dark {
+            background-color: #2d3748; /* A dark color similar to the app's dark mode */
+        }
+        .text-moose-blue { color: #3b82f6; }
+        .text-moose-orange { color: #f97316; }
+        .text-moose-purple { color: #8b5cf6; }
+        .text-moose-green { color: #22c55e; }
+        .text-moose-red { color: #ef4444; }
+
+        .bg-moose-blue { background-color: #3b82f6; }
+        .bg-moose-orange { background-color: #f97316; }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .screenshot {
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.2);
+            border: 1px solid #e5e7eb;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="images/logo.png" alt="Moose Reader Logo" class="h-10 w-10">
+                <span class="text-2xl font-bold text-gray-800">Moose Reader<sup class="text-sm text-gray-500">&copy;</sup></span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-moose-blue transition">Features</a>
+                <a href="#moose-speak" class="text-gray-600 hover:text-moose-blue transition">Moose Speak</a>
+                <a href="#pro" class="text-gray-600 hover:text-moose-blue transition">Pro</a>
+                <a href="#changelog" class="text-gray-600 hover:text-moose-blue transition">Changelog</a>
+                <a href="#contact" class="text-gray-600 hover:text-moose-blue transition">Contact</a>
+                <a href="https://apps.microsoft.com/detail/9N2J8SGB10TJ" target="_blank" class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded-lg transition">Download</a>
+            </nav>
+			<div class="md:hidden">
+				<button id="mobile-menu-button" class="text-gray-800 hover:text-moose-blue focus:outline-none">
+					<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+					</svg>
+				</button>
+			</div>
+        </div>
+    </header>
+	<!-- Mobile Menu -->
+	<div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200">
+		<a href="#features" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-50">Features</a>
+		<a href="#moose-speak" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-50">Moose Speak</a>
+		<a href="#pro" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-50">Pro</a>
+		<a href="#changelog" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-50">Changelog</a>
+		<a href="#contact" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-50">Contact</a>
+		<a href="https://github.com/vplsh7/moose-reader-releases/releases" target="_blank" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-50">Download</a>
+	</div>
+    <!-- Hero Section -->
+    <main class="container mx-auto px-6 py-16 md:py-24 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+            Your content, <span class="text-moose-blue">beautifully organized.</span>
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            A simple, powerful, and elegant RSS reader for your desktop. Moose Reader provides a clean, distraction-free reading experience with full local control.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+			<a href="https://github.com/vplsh7/moose-reader-releases/releases" target="_blank" class="w-full sm:w-auto bg-moose-blue hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+				<img src="images/github-mark-white.png" class="h-6 w-6" alt="GitHub Logo">
+				<span>Download Free</span>
+			</a>
+            <a href="https://apps.microsoft.com/detail/9N2J8SGB10TJ" target="_blank" class="w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-800 font-bold py-3 px-8 rounded-lg text-lg transition border border-gray-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Microsoft_Store.svg" class="h-5 w-5" alt="Microsoft Store Logo">
+				<span>Get Pro on Microsoft Store</span>
+            </a>
+        </div>
+        <div class="mt-16 md:mt-24">
+            <img src="images/main.png" alt="Moose Reader main window" class="screenshot mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/e2e8f0/64748b?text=App+Screenshot';">
+        </div>
+    </main>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">Everything You Need to Read</h2>
+                <p class="mt-4 text-lg text-gray-600">All the features for a perfect reading workflow.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1: 100% Local -->
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-2">100% Local</h3>
+                    <p class="text-gray-600">All your feeds, folders, and articles are stored in a high-performance local database. No cloud account required.</p>
+                </div>
+                <!-- Feature 2: Powerful Management -->
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-2">Powerful Feed Management</h3>
+                    <p class="text-gray-600">Organize feeds with folders, drag-and-drop reordering, and simple add, edit, and delete functionality.</p>
+                </div>
+                <!-- Feature 4: Smart & Automatic -->
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-2">Smart & Automatic</h3>
+                    <p class="text-gray-600">Automatic favicon fetching, background syncing, and data cleanup routines keep your library pristine.</p>
+                </div>
+                <!-- Feature 5: Elegant UI/UX -->
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-2">Elegant UI & UX</h3>
+                    <p class="text-gray-600">Enjoy a classic three-pane layout, switchable splits, and light/dark modes with custom accent colors.</p>
+                </div>
+                <!-- Feature 6: Productivity -->
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-2">Productivity Focused</h3>
+                    <p class="text-gray-600">Import your feeds via OPML, mark all as read with a click, and get helpful error messages for broken feeds.</p>
+                </div>
+                 <!-- Feature 7: Customization -->
+                <div class="feature-card">
+                    <h3 class="text-xl font-semibold mb-2">Highly Customizable</h3>
+                    <p class="text-gray-600">Choose from <span class="font-semibold text-moose-blue">Blue</span>, <span class="font-semibold text-moose-purple">Purple</span>, <span class="font-semibold text-moose-green">Green</span>, <span class="font-semibold text-moose-red">Red</span>, or <span class="font-semibold text-moose-orange">Orange</span> accent colors.</p>
+                </div>
+            </div>
+             <div class="mt-16 grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Customize Your View</h3>
+                    <p class="text-gray-600 mb-6">Pick your favorite accent color, and fine-tune sync settings, all from one simple dialog.</p>
+                    <img src="images/settings.png" alt="Moose Reader settings dialog" class="screenshot" onerror="this.onerror=null;this.src='https://placehold.co/800x600/e2e8f0/64748b?text=Settings';">
+				</div>
+				<div>
+                    <h3 class="text-2xl font-bold mb-4">Beautiful Dark Mode</h3>
+                    <p class="text-gray-600 mb-6">Switch between light and dark themes, with beautiful accent color overlay.</p>
+					<img src="images/dark_mode.png" alt="Moose Reader in Dark Mode" class="screenshot" onerror="this.onerror=null;this.src='https://placehold.co/800x600/e2e8f0/64748b?text=Dark+Mode';">
+				</div>
+				<div>
+                    <h3 class="text-2xl font-bold mb-4">Manage Feeds & Folders</h3>
+                    <p class="text-gray-600 mb-6">Add, edit, delete & reorder feeds. Organize your feeds into folders.</p>
+                    <img src="images/feed_settings.png" alt="Moose Reader settings dialog" class="screenshot" onerror="this.onerror=null;this.src='https://placehold.co/800x600/e2e8f0/64748b?text=Settings';">
+                </div>
+				<div>
+                    <h3 class="text-2xl font-bold mb-4">Fetch Full Articles</h3>
+                    <p class="text-gray-600 mb-6">Fetch full articles for truncated feeds.</p>
+                    <img src="images/full_articles.png" alt="Moose Reader settings dialog" class="screenshot" onerror="this.onerror=null;this.src='https://placehold.co/800x600/e2e8f0/64748b?text=Settings';">
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Moose Speak Section -->
+    <section id="moose-speak" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold">A Dose of Personality</h2>
+                    <p class="mt-4 text-lg text-gray-600">Moose Reader isn't just functional, it's fun. Get a dose of unexpected wisdom from our resident moose with a periodically refreshing quote in the sidebar. It's a small touch to make your day a little brighter.</p>
+                </div>
+                <div class="flex justify-center">
+                    <img src="images/speak.png" alt="Moose Speak feature screenshot" class="rounded-lg shadow-xl" onerror="this.onerror=null;this.src='https://placehold.co/400x200/e2e8f0/64748b?text=Moose+Speak';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pro Section -->
+    <section id="pro" class="py-20 bg-app-dark text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold">Go <span class="text-moose-orange">Pro</span> for More Power</h2>
+            <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">Unlock premium features designed for serious readers and take your workflow to the next level.</p>
+            <div class="mt-12 grid md:grid-cols-2 gap-8 text-left">
+                <div class="bg-gray-800/50 p-8 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-3">Fetch Full Articles</h3>
+                    <p class="text-gray-400">Tired of truncated RSS feeds? Moose Reader Pro can fetch the full, cleaned-up text of an article, removing ads and menus for the best reading experience, right in the app.</p>
+                </div>
+                <div class="bg-gray-800/50 p-8 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-3">Save Articles Offline</h3>
+                    <p class="text-gray-400">Selectively save the full content and images of any article for offline reading. Perfect for your commute or when you're away from an internet connection.</p>
+                </div>
+            </div>
+            <div class="mt-12">
+                 <a href="https://apps.microsoft.com/detail/9N2J8SGB10TJ" target="_blank" class="inline-flex items-center justify-center space-x-3 bg-moose-orange hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-lg text-xl transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Microsoft_Store.svg" class="h-6 w-6" alt="Microsoft Store Logo">
+					<span>Get Moose Reader Pro</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Changelog Section -->
+    <section id="changelog" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">What's New</h2>
+                <p class="mt-4 text-lg text-gray-600">We're always working to make Moose Reader better.</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="border-l-2 border-gray-200 pl-8 space-y-12">
+					<!-- Version 1.7.1 -->
+                    <div class="relative">
+                        <div class="absolute -left-10 h-5 w-5 bg-moose-blue rounded-full"></div>
+                        <h3 class="text-2xl font-semibold">Version 1.7.1 <span class="text-sm font-medium text-gray-500 ml-2"> 30 August 2025</span></h3>
+                        <div class="mt-2 text-gray-700 space-y-2">
+                            <p><strong class="font-semibold text-yellow-600">[Bugfix]</strong> <b>Fixed Database Access in Installers:</b> Resolved a major issue where the installed versions of the app (Windows Installer) could not write to the database.</p>
+                            <p><strong class="font-semibold text-yellow-600">[Bugfix]</strong> <b>Fixed Network Certificate Errors:</b> Resolved an "error certificate verify failed" issue in packaged builds by bundling a trusted root certificate authority file (cacert.pem).</p>
+                        </div>
+                    </div>
+                    <!-- Version 1.7.0 -->
+                    <div class="relative">
+                        <div class="absolute -left-10 h-5 w-5 bg-gray-300 rounded-full"></div>
+                        <h3 class="text-2xl font-semibold">Version 1.7.0 <span class="text-sm font-medium text-gray-500 ml-2"> 23 August 2025</span></h3>
+                        <div class="mt-2 text-gray-700 space-y-2">
+                            <p><strong class="font-semibold text-green-600">[New]</strong> Added the <b>"Moose Speak"</b> personality feature.</p>
+                            <p><strong class="font-semibold text-green-600">[New]</strong> Added helpful error messages for feeds that fail to sync.</p>
+                            <p><strong class="font-semibold text-blue-600">[Improved]</strong> UI tweaks for better readability and spacing.</p>
+                        </div>
+                    </div>
+                    <!-- Version 1.5.0 -->
+                    <div class="relative">
+                        <div class="absolute -left-10 h-5 w-5 bg-gray-300 rounded-full"></div>
+                        <h3 class="text-2xl font-semibold">Version 1.5.0 <span class="text-sm font-medium text-gray-500 ml-2">23 August 2025</span></h3>
+                         <div class="mt-2 text-gray-700 space-y-2">
+                            <p><strong class="font-semibold text-green-600">[New]</strong> <b>Introduced Pro features:</b> Fetch Full Article and Save Offline.</p>
+                            <p><strong class="font-semibold text-green-600">[New]</strong> Added automatic Favicon fetching.</p>
+                            <p><strong class="font-semibold text-green-600">[New]</strong> Window size and position now persist between sessions.</p>
+                            <p><strong class="font-semibold text-red-600">[Fixed]</strong> Corrected an issue with unread count calculations.</p>
+                        </div>
+                    </div>
+                    <!-- Version 1.0.0 -->
+                     <div class="relative">
+                        <div class="absolute -left-10 h-5 w-5 bg-gray-300 rounded-full"></div>
+                        <h3 class="text-2xl font-semibold">Version 1.0.0 <span class="text-sm font-medium text-gray-500 ml-2">16 August 2025</span></h3>
+                         <div class="mt-2 text-gray-700 space-y-2">
+                            <p>🎉 Initial public release of Moose Reader!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">Get in Touch</h2>
+                <p class="mt-4 text-lg text-gray-600">Have a question, a feature request, or a bug to report? We'd love to hear from you.</p>
+            </div>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="feature-card text-center">
+                    <h3 class="text-xl font-semibold mb-2">General Inquiries</h3>
+                    <p class="text-gray-600 mb-4">For general questions, feedback, or suggestions, please send us an email.</p>
+                    <a href="mailto:support@mooseapps.io" class="text-moose-blue font-semibold hover:underline">support@mooseapps.io</a>
+                </div>
+                <div class="feature-card text-center">
+                    <h3 class="text-xl font-semibold mb-2">Bug Reports & Issues</h3>
+                    <p class="text-gray-600 mb-4">The best way to report a bug is by opening an issue on our GitHub page.</p>
+                    <a href="https://github.com/vplsh7/moose-reader-releases/issues" target="_blank" class="text-moose-blue font-semibold hover:underline">Open a GitHub Issue</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-600">
+             <div class="flex items-center justify-center space-x-3 mb-4">
+                <img src="images/logo.png" alt="Moose Reader Logo" class="h-8 w-8">
+                <span class="text-xl font-bold text-gray-700">Moose Reader<sup class="text-sm text-gray-500">&copy;</sup></span>
+            </div>
+            <p>Copyright © 2025 <a href="https://mooseapps.io" target="_blank" class="text-moose-purple hover:underline">Moose Apps</a> & V Shah. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Built with ❤️ for the love of reading.</p>
+        </div>
+    </footer>
+	<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+        // Function to toggle the menu
+        const toggleMenu = () => {
+            mobileMenu.classList.toggle('hidden');
+        };
+
+        // Toggle menu when the button is clicked
+        mobileMenuButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMenu();
+        });
+
+        // Handle clicks on menu links
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                // Only handle clicks on internal anchor links
+                const href = link.getAttribute('href');
+                if (href.startsWith('#')) {
+                    event.preventDefault(); // Stop the default jump
+                    
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    
+                    toggleMenu(); // Close the menu after clicking
+                }
+            });
+        });
+
+        // Close the menu if a click happens anywhere else on the page
+        document.addEventListener('click', (event) => {
+            const isClickInsideMenu = mobileMenu.contains(event.target);
+            const isClickOnButton = mobileMenuButton.contains(event.target);
+            const isMenuOpen = !mobileMenu.classList.contains('hidden');
+
+            if (isMenuOpen && !isClickInsideMenu && !isClickOnButton) {
+                toggleMenu();
+            }
+        });
+    });
+	</script>
+</body>
+</html>
+  <!-- Paste your moose-reader.html content here -->
 
   <section id="changelog" class="py-20 bg-white">
     <div class="container mx-auto px-6">
@@ -25,3 +368,4 @@ const readerChanges = changelogAll
     </div>
   </section>
 </BaseLayout>
+
