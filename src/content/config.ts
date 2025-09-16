@@ -9,4 +9,8 @@ const changelog = defineCollection({
   })
 });
 
-export const collections = { changelog };
+export const collections = {
+  antler: defineCollection({ schema: changelogSchema }),
+  reader: defineCollection({ schema: changelogSchema }),
+};
+
