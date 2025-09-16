@@ -2,9 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
+const readerChanges = await getCollection("reader");
+readerChanges.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 
 const changelogs = await getCollection("reader");
-
 changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 ---
 
@@ -335,5 +336,6 @@ changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
     </div>
   </section>
 </BaseLayout>
+
 
 
