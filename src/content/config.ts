@@ -1,12 +1,10 @@
 import { defineCollection, z } from "astro:content";
 
-// Define schema for changelogs
 const changelogSchema = z.object({
   title: z.string(),
-  date: z.string(), // you can switch to z.date() if you want Date objects
+  date: z.string(), // or z.date()
 });
 
-// Export collections
 export const collections = {
   antler: defineCollection({
     type: "content",
