@@ -8,9 +8,7 @@ const changelogs = await getCollection("reader");
 changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 ---
 
-
 <BaseLayout title="Moose Reader | Your content, beautifully organized">
-  <!-- Paste your moose-reader.html content here -->
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -25,11 +23,9 @@ changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa; /* A very light grey, similar to the app's light mode */
+            background-color: #f8f9fa;
         }
-        .bg-app-dark {
-            background-color: #2d3748; /* A dark color similar to the app's dark mode */
-        }
+        .bg-app-dark { background-color: #2d3748; }
         .text-moose-blue { color: #3b82f6; }
         .text-moose-orange { color: #f97316; }
         .text-moose-purple { color: #8b5cf6; }
@@ -43,12 +39,14 @@ changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
             background-color: white;
             border-radius: 0.75rem;
             padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+                        0 2px 4px -2px rgb(0 0 0 / 0.1);
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+                        0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
         .screenshot {
             border-radius: 0.75rem;
@@ -221,24 +219,25 @@ changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 
     <!-- Changelog Section -->
 	<section id="changelog" class="py-20 bg-white">
-			<div class="container mx-auto px-6">
-			  <h2 class="text-3xl font-bold text-center mb-12">What's New</h2>
-			  <p class="mt-4 text-lg text-gray-600 text-center">
-				We're always working to make Moose Reader better.
-			  </p>
-			  <div class="max-w-3xl mx-auto space-y-8">
-				{changelogs.map((entry) => (
-				  <article class="border-l-2 pl-6">
-					<h3 class="text-2xl font-semibold">
-					  {entry.data.title}
-					  <span class="ml-2 text-sm text-gray-500">{entry.data.date}</span>
-					</h3>
-					<div class="prose mt-2" set:html={entry.body}></div>
-				  </article>
-				))}
-			  </div>
-			</div>
-		  </section>
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">What's New</h2>
+            <p class="mt-4 text-lg text-gray-600 text-center">
+                We're always working to make Moose Reader better.
+            </p>
+            <div class="max-w-3xl mx-auto space-y-8">
+                {changelogs.map((entry) => (
+                    <article class="border-l-2 pl-6">
+                        <h3 class="text-2xl font-semibold">
+                            {entry.data.title}
+                            <span class="ml-2 text-sm text-gray-500">{entry.data.date}</span>
+                        </h3>
+                        <!-- ✅ use entry.render() to render MDX -->
+                        <entry.render />
+                    </article>
+                ))}
+            </div>
+        </div>
+    </section>
     
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-50">
@@ -278,6 +277,7 @@ changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 </html>
   <!-- Paste your moose-reader.html content here -->
 </BaseLayout>
+
 
 
 
