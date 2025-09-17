@@ -2,12 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-const readerChanges = await getCollection("reader");
-readerChanges.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
-
+// Fetch changelog entries
 const changelogs = await getCollection("reader");
+// Sort by date (newest first)
 changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 ---
+
 
 <BaseLayout title="Moose Reader | Your content, beautifully organized">
   <!-- Paste your moose-reader.html content here -->
@@ -220,23 +220,25 @@ changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
     </section>
 
     <!-- Changelog Section -->
-	 <section id="changelog" class="py-20 bg-white">
-	  <div class="container mx-auto px-6">
-	    <h2 class="text-3xl font-bold text-center mb-12">What's New</h2>
-		<p class="mt-4 text-lg text-gray-600">We're always working to make Moose Reader better.</p>
-	    <div class="max-w-3xl mx-auto space-y-8">
-	      {changelogs.map((entry) => (
-	        <article class="border-l-2 pl-6">
-	          <h3 class="text-2xl font-semibold">
-	            {entry.data.title}
-	            <span class="ml-2 text-sm text-gray-500">{entry.data.date}</span>
-	          </h3>
-	          <div class="prose mt-2" set:html={entry.body}></div>
-	        </article>
-	      ))}
-	    </div>
-	  </div>
-	</section>
+	<section id="changelog" class="py-20 bg-white">
+			<div class="container mx-auto px-6">
+			  <h2 class="text-3xl font-bold text-center mb-12">What's New</h2>
+			  <p class="mt-4 text-lg text-gray-600 text-center">
+				We're always working to make Moose Reader better.
+			  </p>
+			  <div class="max-w-3xl mx-auto space-y-8">
+				{changelogs.map((entry) => (
+				  <article class="border-l-2 pl-6">
+					<h3 class="text-2xl font-semibold">
+					  {entry.data.title}
+					  <span class="ml-2 text-sm text-gray-500">{entry.data.date}</span>
+					</h3>
+					<div class="prose mt-2" set:html={entry.body}></div>
+				  </article>
+				))}
+			  </div>
+			</div>
+		  </section>
     
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-50">
@@ -267,75 +269,16 @@ changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
                 <img src="images/logo.png" alt="Moose Reader Logo" class="h-8 w-8">
                 <span class="text-xl font-bold text-gray-700">Moose Reader<sup class="text-sm text-gray-500">&copy;</sup></span>
             </div>
-            <p>Copyright © 2025 <a href="https://mooseapps.io" target="_blank" class="text-moose-purple hover:underline">Moose Apps</a> & V Shah. All Rights Reserved.</p>
-            <p class="text-sm mt-2">Built with ❤️ for the love of reading.</p>
+            <p>Copyright © 2025 <a href="/index" target="_blank" class="text-moose-purple hover:underline">Moose Apps</a> & V Shah. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Built with ❤️ for reading.</p>
         </div>
     </footer>
-	<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-
-        // Function to toggle the menu
-        const toggleMenu = () => {
-            mobileMenu.classList.toggle('hidden');
-        };
-
-        // Toggle menu when the button is clicked
-        mobileMenuButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            toggleMenu();
-        });
-
-        // Handle clicks on menu links
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', (event) => {
-                // Only handle clicks on internal anchor links
-                const href = link.getAttribute('href');
-                if (href.startsWith('#')) {
-                    event.preventDefault(); // Stop the default jump
-                    
-                    const targetElement = document.querySelector(href);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                    
-                    toggleMenu(); // Close the menu after clicking
-                }
-            });
-        });
-
-        // Close the menu if a click happens anywhere else on the page
-        document.addEventListener('click', (event) => {
-            const isClickInsideMenu = mobileMenu.contains(event.target);
-            const isClickOnButton = mobileMenuButton.contains(event.target);
-            const isMenuOpen = !mobileMenu.classList.contains('hidden');
-
-            if (isMenuOpen && !isClickInsideMenu && !isClickOnButton) {
-                toggleMenu();
-            }
-        });
-    });
-	</script>
+	
 </body>
 </html>
   <!-- Paste your moose-reader.html content here -->
-
-  <section id="changelog" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold">What's New</h2>
-      <div class="mt-6 space-y-8">
-        {readerChanges.map(item => (
-          <article class="border-l-2 border-gray-200 pl-6">
-            <h3 class="text-xl font-semibold">{item.data.version} <span class="text-sm text-gray-500 ml-2">{item.data.date}</span></h3>
-            <div class="mt-2" set:html={item.body}></div>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
 </BaseLayout>
+
 
 
 
