@@ -4,8 +4,15 @@ import { getCollection } from "astro:content";
 
 // Fetch changelog entries
 const changelogs = await getCollection("antler");
-// Sort by date (newest first)
 changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+
+// ✅ Pre-render MDX bodies before returning to template
+const rendered = await Promise.all(
+  changelogs.map(async (entry) => {
+    const { Content } = await entry.render();
+    return { ...entry, Content };
+  })
+);
 ---
 
 <BaseLayout title="Moose Antler | Your Ideas, Amplified">
@@ -262,6 +269,7 @@ changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
     </footer>
   <!-- Paste your moose-antler.html content here -->
 </BaseLayout>
+
 
 
 
