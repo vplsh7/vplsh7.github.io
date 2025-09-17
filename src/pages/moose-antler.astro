@@ -220,7 +220,7 @@ changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
                 <span class="ml-2 text-sm text-gray-500">{entry.data.date}</span>
               </h3>
               <!-- ✅ render MDX with components -->
-              <entry.render />
+              {await entry.render()}
             </article>
           ))}
         </div>
@@ -262,6 +262,7 @@ changelogs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
     </footer>
   <!-- Paste your moose-antler.html content here -->
 </BaseLayout>
+
 
 
 
