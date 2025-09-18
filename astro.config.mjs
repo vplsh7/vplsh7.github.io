@@ -3,6 +3,7 @@ import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
   site: "https://vplsh7.github.io",
-  integrations: [tailwind(), mdx()],
+  integrations: [tailwind()],
 });
+
 
