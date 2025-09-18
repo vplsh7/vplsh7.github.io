@@ -1,5 +1,8 @@
 ---
-const { title = "Moose Apps" } = Astro.props;
+const {
+  title = "Moose Apps",
+  favicon = "/images/favicon-mooseapps.png" // ✅ define default favicon
+} = Astro.props;
 import "../styles.css";
 ---
 
@@ -22,4 +25,5 @@ import "../styles.css";
     <slot />
   </body>
 </html>
+
 
