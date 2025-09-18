@@ -15,13 +15,34 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             Moose Apps<sup class="text-sm text-gray-500">&copy;</sup>
           </span>
         </div>
+   <!-- Desktop Menu -->
         <nav class="hidden md:flex items-center space-x-8">
           <a href="/#apps" class="text-gray-600 hover:text-brand-dark transition">Our Apps</a>
           <a href="/#principles" class="text-gray-600 hover:text-brand-dark transition">Principles</a>
           <a href="/#contact" class="text-gray-600 hover:text-brand-dark transition">Contact</a>
         </nav>
+    <!-- Mobile Hamburger -->
+    <button id="index-menu-button" class="md:hidden text-gray-800 hover:text-brand-dark focus:outline-none">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"/>
+      </svg>
+    </button>
       </div>
+
+  <!-- Mobile Menu -->
+  <div id="index-menu" class="hidden md:hidden bg-white border-t border-gray-200 px-6 py-4 space-y-3">
+    <a href="/#apps" class="block text-gray-700 hover:text-brand-dark">Our Apps</a>
+    <a href="/#principles" class="block text-gray-700 hover:text-brand-dark">Principles</a>
+    <a href="/#contact" class="block text-gray-700 hover:text-brand-dark">Contact</a>
+  </div>
     </header>
+ <!-- Mobile Menu Script -->
+<script>
+  document.getElementById("index-menu-button").addEventListener("click", () => {
+    document.getElementById("index-menu").classList.toggle("hidden");
+  });
+</script>
 
     <!-- Hero Section -->
     <main class="container mx-auto px-6 py-20 md:py-32 text-center hero-bg">
@@ -148,6 +169,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </html>
   <!-- Paste your index.html main content here -->
 </BaseLayout>
+
 
 
 
