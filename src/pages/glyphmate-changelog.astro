@@ -1,1 +1,43 @@
+---
+import GlyphmateChangelog102 from "../content/changelog/glyphmate/glyphmate-1.0.2.astro";
+import GlyphmateChangelog101 from "../content/changelog/glyphmate/glyphmate-1.0.1.astro";
+import GlyphmateChangelog100 from "../content/changelog/glyphmate/glyphmate-1.0.0.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GlyphMate Changelog</title>
+    <link rel="icon" type="image/png" href="/images/glyphmate_favicon.png" />
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-inter">
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <img src="/images/glyphmate_logo.png" alt="GlyphMate Logo" class="h-9 w-9">
+          <span class="text-2xl font-bold text-gray-800">GlyphMate</span>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="/" class="text-gray-600 hover:text-blue-600 transition">Moose Apps</a>
+          <a href="/glyphmate" class="text-gray-600 hover:text-blue-600 transition">Home</a>
+          <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+      <h1 class="text-4xl font-bold mb-6">GlyphMate Changelog</h1>
+      <p class="mb-12 text-gray-600">Keep up with new features, improvements, and bug fixes.</p>
+      <div class="max-w-3xl mx-auto space-y-8">
+        <GlyphmateChangelog102 />
+        <GlyphmateChangelog101 />
+        <GlyphmateChangelog100 />
+      </div>
+    </main>
+
+    <footer class="bg-gray-100 border-t py-8 text-center text-gray-600">
+      <p>© 2025 Moose Apps & V Shah. Built with ❤️ for typography.</p>
+    </footer>
+  </body>
+</html>
 
