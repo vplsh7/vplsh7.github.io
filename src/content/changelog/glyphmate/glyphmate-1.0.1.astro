@@ -3,21 +3,29 @@
 // GlyphMate 1.0.1 changelog component
 ---
 
+<article class="border rounded-lg p-6 bg-white shadow-sm">
+  <header class="flex items-baseline justify-between mb-4">
+    <div class="flex items-center gap-3">
+      <h3 class="text-xl font-semibold">GlyphMate 1.0.1</h3>
+      <span class="inline-flex items-center text-xs font-medium rounded-full bg-yellow-100 text-yellow-800 px-2.5 py-0.5">Minor</span>
+    </div>
+    <time datetime="2025-10-05" class="text-sm text-gray-500">2025-10-05</time>
+  </header>
 
-<article class="prose">
-<h3 class="text-2xl font-semibold">GlyphMate 1.0.1</h3>
-<div class="text-sm text-gray-500 mb-4">2025-10-05</div>
+  <div class="space-y-4 text-gray-700">
+    <div>
+      <h4 class="font-semibold mb-2">Added</h4>
+      <ul class="list-disc ml-5 space-y-1">
+        <li><strong>Theme Persistence:</strong> User theme (Light/Dark) and accent color now persist between sessions.</li>
+        <li><strong>Accent Color Picker:</strong> Added a color picker in Settings so users can choose their accent color.</li>
+      </ul>
+    </div>
 
-
-<h4 class="font-semibold mt-4">Added</h4>
-<ul class="list-disc ml-6 mt-2">
-<li><strong>Theme Persistence:</strong> Light/Dark mode and accent color saved across restarts.</li>
-<li><strong>Accent Color:</strong> Added a color picker in Settings to customize the accent color.</li>
-</ul>
-
-
-<h4 class="font-semibold mt-4">Changed</h4>
-<ul class="list-disc ml-6 mt-2">
-<li>Upgraded theming to use `ColorScheme.fromSeed` for consistent themes.</li>
-</ul>
+    <div>
+      <h4 class="font-semibold mb-2">Changed</h4>
+      <ul class="list-disc ml-5 space-y-1">
+        <li>Upgraded theming to use <code>ColorScheme.fromSeed</code> for more consistent, dynamic palettes.</li>
+      </ul>
+    </div>
+  </div>
 </article>
