@@ -1,4 +1,4 @@
-// File: src/content/changelog/glyphmate/glyphmate-1.0.2.astro
+
 ---
 // GlyphMate 1.0.2 changelog component
 ---
@@ -25,4 +25,37 @@
 <ul class="list-disc ml-6 mt-2">
 <li>Resolved a networking issue in Windows release builds that prevented fetching Google Fonts.</li>
 </ul>
+</article>
+
+---
+// GlyphMate 1.0.2 preview component
+---
+<article class="border rounded-lg p-6 bg-white shadow-sm">
+  <header class="flex items-baseline justify-between mb-4">
+    <h3 class="text-xl font-semibold">GlyphMate 1.0.2</h3>
+    <time datetime="2025-10-05" class="text-sm text-gray-500">2025-10-05</time>
+  </header>
+
+  <div class="space-y-3 text-gray-700">
+    <div>
+      <h4 class="font-semibold">Added</h4>
+      <ul class="list-disc ml-5">
+        <li><strong>Security:</strong> Implemented a secure backend proxy using Firebase Cloud Functions to protect the Google Fonts API key.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-semibold">Removed</h4>
+      <ul class="list-disc ml-5">
+        <li>Removed the `.env` file and `flutter_dotenv` package from the client application (API key moved to backend).</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-semibold">Fixed</h4>
+      <ul class="list-disc ml-5">
+        <li>Resolved a networking issue where release builds on Windows couldn't fetch Google Fonts.</li>
+      </ul>
+    </div>
+  </div>
 </article>
