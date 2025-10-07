@@ -1,1 +1,107 @@
+---
+import GlyphmateChangelog102 from "../content/changelog/glyphmate/glyphmate-1.0.2.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GlyphMate | Your Smart Companion for Font Pairings</title>
+    <link rel="icon" type="image/png" href="/images/glyphmate_favicon.png" />
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-inter">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <img src="/images/glyphmate_logo.png" alt="GlyphMate Logo" class="h-9 w-9">
+          <span class="text-2xl font-bold text-gray-800">GlyphMate<sup class="text-sm text-gray-500">&copy;</sup></span>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="/" class="text-gray-600 hover:text-blue-600 transition">Moose Apps</a>
+          <a href="#features" class="text-gray-600 hover:text-blue-600 transition">Features</a>
+          <a href="#screenshots" class="text-gray-600 hover:text-blue-600 transition">Screenshots</a>
+          <a href="#changelog" class="text-gray-600 hover:text-blue-600 transition">Changelog</a>
+          <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
+        </nav>
+        <button id="mobile-menu-button" class="md:hidden text-gray-800 hover:text-blue-600 focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"/>
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200">
+        <a href="/" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-50">Moose Apps</a>
+        <a href="#features" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-50">Features</a>
+        <a href="#screenshots" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-50">Screenshots</a>
+        <a href="#changelog" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-50">Changelog</a>
+        <a href="#contact" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-50">Contact</a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main class="container mx-auto px-6 py-16 text-center">
+      <h1 class="text-5xl font-extrabold leading-tight">
+        Your Smart Companion for <span class="text-blue-600">Perfect Font Pairings.</span>
+      </h1>
+      <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
+        Compare, pair, and export fonts like a pro — GlyphMate brings intelligent typography tools to your desktop.
+      </p>
+      <div class="mt-10">
+        <a href="https://github.com/vplsh7/glyphmate/releases"
+          target="_blank"
+          class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg transition">
+          Download from GitHub
+        </a>
+      </div>
+      <img src="/images/glyphmate_main.png" alt="GlyphMate main window"
+        class="mt-16 rounded-xl shadow-lg border mx-auto max-w-4xl">
+    </main>
+
+    <!-- Features -->
+    <section id="features" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Powerful Features for Designers</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="feature-card"><h3 class="text-xl font-semibold mb-2">Side-by-Side Comparison</h3><p class="text-gray-600">Preview any two fonts — local or Google Fonts — side-by-side with custom text.</p></div>
+          <div class="feature-card"><h3 class="text-xl font-semibold mb-2">Unified Font Library</h3><p class="text-gray-600">A searchable dropdown combining local and Google Fonts in one clean list.</p></div>
+          <div class="feature-card"><h3 class="text-xl font-semibold mb-2">Professional PDF Export</h3><p class="text-gray-600">Generate high-quality specimen sheets with your choice of text and layout.</p></div>
+          <div class="feature-card"><h3 class="text-xl font-semibold mb-2">Light & Dark Mode</h3><p class="text-gray-600">Switch themes instantly — your choice is remembered next session.</p></div>
+          <div class="feature-card"><h3 class="text-xl font-semibold mb-2">Accent Colors</h3><p class="text-gray-600">Pick your own highlight color to personalize your experience.</p></div>
+          <div class="feature-card"><h3 class="text-xl font-semibold mb-2">Cross-Platform</h3><p class="text-gray-600">Runs natively on Windows, macOS, and Linux with Flutter performance.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Changelog Section -->
+    <section id="changelog" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-12">What’s New in GlyphMate</h2>
+        <p class="mt-4 text-lg text-gray-600">We’re always improving GlyphMate with new features and fixes.</p>
+        <div class="max-w-3xl mx-auto mt-12 space-y-8 text-left">
+          <GlyphmateChangelog102 /> <!-- Latest only -->
+        </div>
+        <div class="text-center mt-8">
+          <a href="/glyphmate-changelog"
+            class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition">
+            View Full Changelog →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t py-8 text-center text-gray-600">
+      <img src="/images/glyphmate_logo.png" alt="GlyphMate Logo" class="h-8 w-8 mx-auto mb-2">
+      <p>© 2025 Moose Apps & V Shah. Built with passion for typography.</p>
+    </footer>
+
+    <script>
+      const btn=document.getElementById('mobile-menu-button');
+      const menu=document.getElementById('mobile-menu');
+      btn.addEventListener('click',()=>menu.classList.toggle('hidden'));
+    </script>
+  </body>
+</html>
 
